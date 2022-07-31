@@ -1,0 +1,9 @@
+body {
+    background: darkgrey;
+    overflow: hidden;
+    text-align: center;
+}
+
+#roadCanvas {
+    background: lightgrey;
+}
