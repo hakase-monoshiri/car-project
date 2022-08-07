@@ -13,6 +13,12 @@ class Road {
         this.top = -almostInfinity;
         this.bottom = almostInfinity;
     }
+    
+    getLaneCenter(laneIndex) {
+        const laneWidth = this.width/this.laneCount;
+        return this.left + laneWidth/2 + 
+        Math.min(laneIndex, this.laneCount -1) * laneWidth;
+    }
 
     draw(context) {
         context.lineWidth = 5;
@@ -26,7 +32,7 @@ class Road {
             );
 
             if ( i > 0 && i < this.laneCount) {
-                context.setLineDash([20, 20]);
+                context.setLineDash([]);
             }
             else {
                 context.setLineDash([]);
